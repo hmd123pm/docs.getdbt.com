@@ -6,7 +6,7 @@ description: "Learn about dbt Explorer and how to interact with it to understand
 image: /img/docs/collaborate/dbt-explorer/trust-signal-health.jpg
 ---
 
-# Trust signals <Lifecycle status="preview" />
+# Trust signal icons <Lifecycle status="preview" />
 
 Trust signal icons offer a quick, at-a-glance view of data health when browsing your resources in dbt Explorer. These icons keep you informed on the status of your resource's health using the indicators **Healthy**, **Caution**, **Degraded**, or **Unknown**.
 
@@ -16,7 +16,7 @@ Trust signal icons offer a quick, at-a-glance view of data health when browsing 
 
 <Lightbox src="/img/docs/collaborate/dbt-explorer/trust-signal-health.jpg" width="55%" title="View trust signals for your models."/> 
 
-## Access trust signals
+## Access trust signal icons
 
 Access trust signal icons in the following places:
 - Search function or click on **Models**, **Sources** or **Exposures** under the **Resource** tab. 
