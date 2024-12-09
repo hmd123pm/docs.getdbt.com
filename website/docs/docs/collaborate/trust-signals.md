@@ -10,7 +10,7 @@ image: /img/docs/collaborate/dbt-explorer/trust-signal-health.jpg
 
 Trust signal icons offer a quick, at-a-glance view of data health when browsing your resources in dbt Explorer. These icons keep you informed on the status of your resource's health using the indicators **Healthy**, **Caution**, **Degraded**, or **Unknown**.
 
-- Supported resources are models, sources, and exposures.
+- Supported resources are [models](/docs/build/models), [sources](/docs/build/sources), and [exposures](/docs/build/exposures).
 - For accurate health data, ensure the resource is up-to-date and had a recent job run.
 - Each trust signal icon reflects key data health components, such as test success status, missing resource descriptions, missing tests, absence of builds in 30-day windows, [and more](#trust-signal-criteria)
 
@@ -19,7 +19,7 @@ Trust signal icons offer a quick, at-a-glance view of data health when browsing 
 ## Access trust signals
 
 Access trust signal icons in the following places:
-- Search function or click on **Models**, **Sources** or **Exposures** under the **Resource** tab. 
+- [Search function](/docs/collaborate/explore-projects#search-resources) or click on **Models**, **Sources** or **Exposures** under the **Resource** tab. 
    - For sources, the trust signal also indicates the source freshness status.
 - View the icons under the **Health** column in [each resource's details page](#view-resource-details). Hover over or click the trust signal to view detailed information.
 - Public models tables under the **Health** column.
