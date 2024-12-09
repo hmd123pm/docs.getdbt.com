@@ -2,7 +2,7 @@
 title: "Trust signal icons"
 sidebar_label: "Trust signal icons"
 id: trust-signals
-description: "Learn about dbt Explorer and how to interact with it to understand, improve, and leverage your dbt projects."
+description: "Learn how trust signal icons offer a quick, at-a-glance view of data health when browsing your resources in dbt Explorer."
 image: /img/docs/collaborate/dbt-explorer/trust-signal-health.jpg
 ---
 
