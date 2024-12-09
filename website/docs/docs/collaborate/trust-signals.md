@@ -1,5 +1,5 @@
 ---
-title: "Trust signals"
+title: "Trust signal icons"
 sidebar_label: "Trust signals"
 id: trust-signals
 description: "Learn about dbt Explorer and how to interact with it to understand, improve, and leverage your dbt projects."
