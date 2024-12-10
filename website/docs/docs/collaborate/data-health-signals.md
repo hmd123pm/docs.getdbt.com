@@ -1,34 +1,34 @@
 ---
-title: "Trust signal icons"
-sidebar_label: "Trust signal icons"
-id: trust-signals
-description: "Learn how trust signal icons offer a quick, at-a-glance view of data health when browsing your resources in dbt Explorer."
-image: /img/docs/collaborate/dbt-explorer/trust-signal-health.jpg
+title: "Data health signals"
+sidebar_label: "Data health signals"
+id: data-health-signals
+description: "Learn how data health signals offer a quick, at-a-glance view of data health when browsing your resources in dbt Explorer."
+image: /img/docs/collaborate/dbt-explorer/data-health-signal.jpg
 ---
 
-# Trust signal icons <Lifecycle status="preview" />
+# Data health signals <Lifecycle status="preview" />
 
-Trust signal icons offer a quick, at-a-glance view of data health when browsing your resources in dbt Explorer. These icons keep you informed on the status of your resource's health using the indicators **Healthy**, **Caution**, **Degraded**, or **Unknown**.
+Data health signal offer a quick, at-a-glance view of data health when browsing your resources in dbt Explorer. These icons keep you informed on the status of your resource's health using the indicators **Healthy**, **Caution**, **Degraded**, or **Unknown**.
 
 - Supported resources are [models](/docs/build/models), [sources](/docs/build/sources), and [exposures](/docs/build/exposures).
 - For accurate health data, ensure the resource is up-to-date and had a recent job run.
-- Each trust signal icon reflects key data health components, such as test success status, missing resource descriptions, missing tests, absence of builds in 30-day windows, [and more](#trust-signal-criteria)
+- Each data health signal reflects key data health components, such as test success status, missing resource descriptions, missing tests, absence of builds in 30-day windows, [and more](#data-health-signal-criteria)
 
-<Lightbox src="/img/docs/collaborate/dbt-explorer/trust-signal-health.jpg" width="55%" title="View trust signals for your models."/> 
+<Lightbox src="/img/docs/collaborate/dbt-explorer/data-health-signal.jpg" width="55%" title="View data health signals for your models."/> 
 
-## Access trust signal icons
+## Access data health signals
 
-Access trust signal icons in the following places:
+Access data health signals in the following places:
 - [Search function](/docs/collaborate/explore-projects#search-resources) or click on **Models**, **Sources** or **Exposures** under the **Resource** tab. 
-   - For sources, the trust signal also indicates the source freshness status.
-- View the icons under the **Health** column in [each resource's details page](#view-resource-details). Hover over or click the trust signal to view detailed information.
+   - For sources, the data health signal also indicates the source freshness status.
+- View the icons under the **Health** column in [each resource's details page](#view-resource-details). Hover over or click the data health signal to view detailed information.
 - Public models tables under the **Health** column.
-- DAG lineage graph 
+- In the DAG lineage graph, click any node to open the node details panel where you can view the health signal and its details.
 
 
-<Lightbox src="/img/docs/collaborate/dbt-explorer/icons-trust-signal.gif" width="95%" title="Access trust signal icons in multiple places in dbt Explorer."/> 
+<Lightbox src="/img/docs/collaborate/dbt-explorer/data-health-signal.gif" width="95%" title="Access data health signals in multiple places in dbt Explorer."/> 
 
-## Trust signal criteria
+## Data health signal criteria
 
 Each resource has a health state that is determined by specific set of criteria. Select the following tabs to view the criteria for that resource type.
 <Tabs>
@@ -41,7 +41,7 @@ The health state of a model is determined by the following criteria:
 | ✅ **Healthy**    | - Built successfully in the last run AND<br />- Built in the last 30 days AND<br />- Model has tests configured AND<br />- All tests passed AND<br />- All upstream sources are fresh or freshness is not applicable (set to `null`) AND<br />- Has a description |
 | 🟡 **Caution**   | - Not built in the last 30 days OR<br />- Tests are not configured OR<br />- Tests return warnings OR<br />- One or more upstream sources are stale:<br />&nbsp;&nbsp;&nbsp;&nbsp;- Has a freshness check configured<br />&nbsp;&nbsp;&nbsp;&nbsp;- Freshness check ran in the past 30 days<br />&nbsp;&nbsp;&nbsp;&nbsp;- Freshness check returned a warning<br />- Missing a description |
 | 🔴 **Degraded**  | - Model failed to build OR<br />- Model has failing tests OR<br />- One or more upstream sources are stale:<br />&nbsp;&nbsp;&nbsp;&nbsp;- Freshness check hasn’t run in the past 30 days<br />&nbsp;&nbsp;&nbsp;&nbsp;- Freshness check returned an error |
-| ⚪ **Unknown**    | - Unable to determine health of resource; ingestion hasn't run           |
+| ⚪ **Unknown**    | - Unable to determine health of resource; no job runs have processed the resource.         |
 
 </TabItem>
 
@@ -54,7 +54,7 @@ The health state of a source is determined by the following criteria:
 | ✅ Healthy	| - Freshness check configured AND<br />- Freshness check passed AND<br />- Freshness check ran in the past 30 days AND<br />- Has a description |
 | 🟡 Caution	| - Freshness check returned a warning OR<br />- Freshness check not configured OR<br />- Freshness check not run in the past 30 days OR<br />- Missing a description |
 | 🔴 Degraded	| - Freshness check returned an error |
-| ⚪ Unknown	| Unable to determine health of resource; ingestion has not run |
+| ⚪ Unknown	| Unable to determine health of resource; no job runs have processed the resource.     |
 
 </TabItem>
 
