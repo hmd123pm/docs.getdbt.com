@@ -8,7 +8,7 @@ image: /img/docs/collaborate/dbt-explorer/data-health-signal.jpg
 
 # Data health signals <Lifecycle status="preview" />
 
-Data health signal offer a quick, at-a-glance view of data health when browsing your resources in dbt Explorer. These icons keep you informed on the status of your resource's health using the indicators **Healthy**, **Caution**, **Degraded**, or **Unknown**.
+Data health signal offer a quick, at-a-glance view of data health when browsing your resources in dbt Explorer. These data health signals keep you informed on the status of your resource's health using the indicators **Healthy**, **Caution**, **Degraded**, or **Unknown**.
 
 - Supported resources are [models](/docs/build/models), [sources](/docs/build/sources), and [exposures](/docs/build/exposures).
 - For accurate health data, ensure the resource is up-to-date and had a recent job run.
@@ -19,12 +19,14 @@ Data health signal offer a quick, at-a-glance view of data health when browsing 
 ## Access data health signals
 
 Access data health signals in the following places:
-- [Search function](/docs/collaborate/explore-projects#search-resources) or click on **Models**, **Sources** or **Exposures** under the **Resource** tab. 
-   - For sources, the data health signal also indicates the source freshness status.
-- View the icons under the **Health** column in [each resource's details page](#view-resource-details). Hover over or click the data health signal to view detailed information.
-- Public models tables under the **Health** column.
-- In the DAG lineage graph, click any node to open the node details panel where you can view the health signal and its details.
+## Access data health signals
 
+Access data health signals in the following places:
+- In the [search function](/docs/collaborate/explore-projects#search-resources) or under **Models**, **Sources**, or **Exposures** in the **Resource** tab.  
+  - For sources, the data health signal also indicates the source freshness status.
+- In the **Health** column on [each resource's details page](/docs/collaborate/explore-projects#view-resource-details). Hover over or click the signal to view detailed information.
+- In the **Health** column of public models tables.
+- In the [DAG lineage graph](/docs/collaborate/explore-projects#project-lineage). Click any node to open the node details panel where you can view it and its details.
 
 <Lightbox src="/img/docs/collaborate/dbt-explorer/data-health-signal.gif" width="95%" title="Access data health signals in multiple places in dbt Explorer."/> 
 
@@ -35,7 +37,7 @@ Each resource has a health state that is determined by specific set of criteria.
 <TabItem value="models" label="Models">
 
 The health state of a model is determined by the following criteria:
-
+<!-- TODO: remove the 'tbd' lines in the table once meta 4025 is done -->
 | **Health state** | **Criteria**   |
 |-------------------|---------------|
 | ✅ **Healthy**    | - Built successfully in the last run AND<br />- Built in the last 30 days AND<br />- Model has tests configured AND<br />- All tests passed AND<br />- All upstream sources are fresh or freshness is not applicable (set to `null`) AND<br />- Has a description |
@@ -64,12 +66,13 @@ The health state of an exposure is determined by the following criteria:
 
 | **Health state** | **Criteria**   |
 |-------------------|---------------|
-| ✅ Healthy	| - Underlying sources are fresh AND<br />- Underlying models built successfully AND<br />- Underlying models’ tests passing AND<br />- (TBD) Underlying models built in the last 30 days |
-| 🟡 Caution	| - At least one underlying source’s freshness checks returned a warning OR<br />- At least one underlying model was skipped OR<br />- At least one underlying model’s tests returned a warning OR<br />- (TBD) At least one model not built in the last 30 days |
+| ✅ Healthy	| - Underlying sources are fresh AND<br />- Underlying models built successfully AND<br />- Underlying models’ tests passing AND<br /><!-- - (TBD) Underlying models built in the last 30 days --> |
+| 🟡 Caution	| - At least one underlying source’s freshness checks returned a warning OR<br />- At least one underlying model was skipped OR<br />- At least one underlying model’s tests returned a warning OR<br /><!-- - (TBD) At least one model not built in the last 30 days --> |   
 | 🔴 Degraded	| At least one underlying source’s freshness checks returned an error OR<br />- At least one underlying model did not build successfully OR<br />- At least one model’s tests returned an error |
 
 </TabItem>
 
+<!-- TODO: Add source collection health once META-3973/3971 are completed 
 <TabItem value="source-collection" label="Source collection health">
 
 The health state of a source collection is determined by the following criteria:
@@ -83,5 +86,6 @@ Functions as an aggregate of underlying sources
 | 🔴 Degraded	| - One or more underlying sources’ freshness checks returned error |
 
 </TabItem>
+-->
 
 </Tabs>
