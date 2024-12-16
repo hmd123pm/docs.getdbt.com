@@ -78,6 +78,19 @@ snapshots:
 
 </File>
 
+<File name='snapshots/properties.yml'>
+
+```yaml
+version: 2
+
+snapshots:
+  - name: snapshot_name
+    [config](/reference/resource-properties/config):
+      enabled: true | false
+```
+
+</File>
+
 <File name='snapshots/<filename>.sql'>
 
 ```sql

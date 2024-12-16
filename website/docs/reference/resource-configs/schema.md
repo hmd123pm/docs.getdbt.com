@@ -22,6 +22,23 @@ models:
 ```
 </File>
 
+In a `snapshots/snapshot_name.yml` file:
+
+<VersionBlock firstVersion="1.9">
+<File name='snapshots/snapshot_name.yml'>
+
+```yaml
+version: 2
+
+snapshots:
+  - name: snapshot_name
+    [config](/reference/resource-properties/config):
+      schema: marketing
+```
+
+</File>
+</VersionBlock>
+
 This would result in the generated relations for these models being located in the  `marketing` schema, so the full relation names would be `analytics.target_schema_marketing.model_name`. This is because the schema of the relation is `{{ target.schema }}_{{ schema }}`. The [definition](#definition) section explains this in more detail.
 
 </TabItem>
