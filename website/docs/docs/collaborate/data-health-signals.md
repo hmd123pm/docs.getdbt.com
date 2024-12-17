@@ -63,7 +63,7 @@ The health state of an exposure is determined by the following criteria:
 
 | **Health state** | **Criteria**   |
 |-------------------|---------------|
-| ✅ Healthy	| All of the following must be true: <br /><br />- Underlying sources are fresh<br />- Underlying models built successfully<br />- Underlying models’ tests passing<br /><!-- - (TBD) Underlying models built in the last 30 days --> |
+| ✅ Healthy	| All of the following must be true: <br /><br />- Underlying sources are fresh<br />- Underlying models built successfully<br />- Underlying models’ tests passing<br />-<!-- - Freshness must be applicable <br /> - (TBD) Underlying models built in the last 30 days --> |
 | 🟡 Caution	| One of the following must be true: <br /><br />- At least one underlying source’s freshness checks returned a warning<br />- At least one underlying model was skipped<br />- At least one underlying model’s tests returned a warning<br /><!-- - (TBD) At least one model not built in the last 30 days --> |   
 | 🔴 Degraded	| One of the following must be true: <br /><br />- At least one underlying source’s freshness checks returned an error<br />- At least one underlying model did not build successfully<br />- At least one model’s tests returned an error |
 
