@@ -1,4 +1,4 @@
----
+#---
 title: "About profiles.yml"
 id: profiles.yml
 ---
